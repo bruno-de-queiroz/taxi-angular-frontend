@@ -5,13 +5,12 @@
 
             <form ng-submit="submit()" name="loginForm" novalidate>
 
-                <input type="hidden" name="type" value="{{ login.type }}"/>
                 <div class="item item-input-inset">
-                    <input type="email" ng-model="login.user.email" name="email" placeholder="Email" />
+                    <input type="email" ng-model="user.email" name="email" placeholder="Email"/>
                 </div>
 
                 <div class="item item-input-inset">
-                    <input type="password" ng-model="login.user.password" name="password" placeholder="Senha" />
+                    <input type="password" ng-model="user.password" name="password" placeholder="Senha"/>
                 </div>
 
                 <br/>
@@ -22,7 +21,9 @@
 
                 <div class="text-center">
                     <button type="submit" class="button button-stable" nav-clear>Entrar</button>
-                    <button type="button" class="button button-positive" ng-click="facebook()" nav-clear>Entrar com facebook</button>
+                    <button type="button" class="button button-positive" ng-click="facebook()" nav-clear>Entrar com
+                        facebook
+                    </button>
                 </div>
 
             </form>

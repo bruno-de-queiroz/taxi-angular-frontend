@@ -54,10 +54,7 @@ angular.module('taxiApp.controllers', [])
 
             $ionicHistory.clearHistory();
 
-            $scope.login = {
-                type: 0
-                , user: {}
-            };
+            $scope.user = {};
 
             $scope.facebook = function () {
                 return $facebook.login()

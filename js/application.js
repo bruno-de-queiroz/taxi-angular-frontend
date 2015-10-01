@@ -92,8 +92,6 @@ app.config([
             libraries: 'visualization'
         });
 
-        $facebookProvider.setAppId('486133094757475');
-
         $stateProvider
             .state('auth', {
                 url: '/auth/'
