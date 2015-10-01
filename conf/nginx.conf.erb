@@ -1,6 +1,3 @@
-#Learn more about some of these options here:
-#http://danpalmer.me/blog/articles/2012-12-30-heroku-buildpack-for-hammer.html
-
 worker_processes 1;
 daemon  off;
 
@@ -20,25 +17,12 @@ http {
     gzip_types text/plain application/xhtml+xml text/xml application/xml application/xml+rss;
 
     server {
-        #We don't know until runtime what port Heroku will want us listening on
         listen      <%= ENV['PORT'] %>;
         server_name 127.0.0.1;
 
-        #The following affects the root: http://yourapp.heroku.com/
         location / {
-            #This will serve static content from a folder in your app
-            root    /app;
-            index   index.html index.htm;
-
-            #Uncomment to mean that http://yourapp.heroku.com will serve up http://heroku.com by default
-            #proxy_pass http://www.heroku.com;
-
-            #uncomment to hide the fact that we're at http://yourapp.heroku.com
-            #proxy_set_header Host       www.heroku.com;
-
-            #We have to have this here so that the port we're listening on isn't
-            #the same port used for the backend server we're proxying
-            port_in_redirect off;
+            root    /app/public;
+            try_files $uri $uri/ /index.html =404;
         }
     }
 }
