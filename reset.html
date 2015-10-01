@@ -1,0 +1,25 @@
+<ion-view view-title="Esqueci minha senha">
+    <ion-content>
+        <div class="padding">
+
+            <div class="padding">
+
+                <p>Enviaremos um email com instruções para alterar sua senha.</p>
+
+                <br/>
+
+                <form ng-submit="submit()" name="reset" novalidate>
+
+                    <div class="item item-input item-bigger">
+                        <input type="email" ng-model="user.email" name="email" placeholder="Email" />
+                    </div>
+                    <br/>
+                    <div class="text-center">
+                        <button type="submit" class="button button-stable" nav-clear>Enviar</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </ion-content>
+</ion-view>

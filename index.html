@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html ng-app="taxiApp">
+<head>
+    <meta charset="utf-8">
+    <base href="/">
+    <meta name=apple-mobile-web-app-capable content="yes">
+    <meta name=apple-mobile-web-app-status-bar-style content="black">
+    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
+    <title>TaxiApp</title>
+
+    <link rel="stylesheet" href="bower_components/ionic/css/ionic.min.css"/>
+    <link rel="stylesheet" href="css/application.css"/>
+    <script src='http://maps.googleapis.com/maps/api/js?sensor=false'></script>
+
+    <script src="bower_components/lodash/lodash.min.js"></script>
+    <script src="bower_components/angular/angular.min.js"></script>
+    <script src="bower_components/angular-animate/angular-animate.min.js"></script>
+    <script src="bower_components/angular-sanitize/angular-sanitize.min.js"></script>
+    <script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
+    <script src="bower_components/angular-simple-logger/dist/index.js"></script>
+    <script src="bower_components/angular-google-maps/dist/angular-google-maps.min.js"></script>
+    <script src="bower_components/ionic/js/ionic.min.js"></script>
+    <script src="bower_components/ionic/js/ionic-angular.min.js"></script>
+    <script src="bower_components/ng-facebook/ngFacebook.js"></script>
+
+    <script src="js/application.js"></script>
+    <script src="js/controllers.js"></script>
+    <script src="js/services.js"></script>
+</head>
+<body ng-controller="ApplicationController" ng-cloak>
+
+<ion-nav-bar align-title="center" class="bar-header bar-positive">
+    <a class="button logout-button button-positive " ng-click="logout()" ng-show="logged">Sair</a>
+    <ion-nav-back-button class="button-icon ion-chevron-left ng-cloak">
+    </ion-nav-back-button>
+</ion-nav-bar>
+
+<ion-nav-view name="base-tab"></ion-nav-view>
+
+<div class="bar text-center ng-cloak bar-footer" ng-show="message"
+     ng-class="{'bar-balanced': message.type == 'notice', 'bar-assertive' : message.type == 'alert' }">
+    <h1 class="title">{{ message.text }}</h1>
+</div>
+
+</body>
+</html>

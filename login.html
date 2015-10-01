@@ -1,0 +1,31 @@
+<ion-view view-title="TaxiApp">
+    <ion-content class="text-center">
+
+        <div class="login-fields">
+
+            <form ng-submit="submit()" name="loginForm" novalidate>
+
+                <input type="hidden" name="type" value="{{ login.type }}"/>
+                <div class="item item-input-inset">
+                    <input type="email" ng-model="login.user.email" name="email" placeholder="Email" />
+                </div>
+
+                <div class="item item-input-inset">
+                    <input type="password" ng-model="login.user.password" name="password" placeholder="Senha" />
+                </div>
+
+                <br/>
+                <a ui-sref="auth.reset">Esqueci minha senha</a>
+                <br/>
+
+                <br/>
+
+                <div class="text-center">
+                    <button type="submit" class="button button-stable" nav-clear>Entrar</button>
+                    <button type="button" class="button button-positive" ng-click="facebook()" nav-clear>Entrar com facebook</button>
+                </div>
+
+            </form>
+        </div>
+    </ion-content>
+</ion-view>
