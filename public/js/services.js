@@ -40,7 +40,7 @@ angular.module('taxiApp.services', [])
             function TaxiApi() {
                 this.key = "taxiAppAccessToken";
                 this.token = $window.sessionStorage.getItem(this.key);
-                this.url = "http://api.taxiapp.com";
+                this.url = "https://polar-beach-6527.herokuapp.com";
             }
 
             TaxiApi.prototype = {

@@ -3,7 +3,6 @@
  */
 
 var app = angular.module("taxiApp", [
-    'ngFacebook',
     'uiGmapgoogle-maps',
     'ionic',
     "taxiApp.controllers",
@@ -58,17 +57,6 @@ app.run([
             $rootScope.$broadcast('newMessage', {type: 'alert', text: 'Você não tem permissão para executar essa ação'})
         });
 
-        (function (d, s, id) {
-            var js, fjs = d.getElementsByTagName(s)[0];
-            if (d.getElementById(id)) {
-                return;
-            }
-            js = d.createElement(s);
-            js.id = id;
-            js.src = "//connect.facebook.net/en_US/sdk.js";
-            fjs.parentNode.insertBefore(js, fjs);
-        }(document, 'script', 'facebook-jssdk'));
-
     }
 ]);
 
@@ -79,8 +67,7 @@ app.config([
     , '$httpProvider'
     , '$ionicConfigProvider'
     , 'uiGmapGoogleMapApiProvider'
-    , '$facebookProvider'
-    , function ($stateProvider, $location, $urlRouterProvider, $httpProvider, $ionicConfigProvider, $uiGmapGoogleMapApiProvider, $facebookProvider) {
+    , function ($stateProvider, $location, $urlRouterProvider, $httpProvider, $ionicConfigProvider, $uiGmapGoogleMapApiProvider) {
 
         $location.html5Mode(true)
         $ionicConfigProvider.views.maxCache(5);
